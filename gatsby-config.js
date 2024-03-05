@@ -19,6 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        // WordpressのURLを指定
+        baseUrl: "nolyc.net",
         name: `images`,
         path: `${__dirname}/src/images`,
       },
@@ -37,6 +39,16 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        // path for rest api
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/media",
+          "**/taxonomies",
+          "**/users",
+          "**/tags",
+        ],
       },
     },
   ],
